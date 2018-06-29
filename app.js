@@ -4,6 +4,7 @@ const path = require('path');
 const cookieparser = require('cookie-parser');
 const logger = require('morgan');
 const sassmiddleware = require('node-sass-middleware');
+const compression = require('compression');
 
 const indexrouter = require('./routes/index');
 const usersrouter = require('./routes/users');
@@ -17,6 +18,7 @@ app.set('view engine', 'ejs');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(compression());
 app.use(cookieparser());
 app.use(sassmiddleware({
     src: path.join(__dirname, 'public/styles/scss'),
@@ -25,14 +27,12 @@ app.use(sassmiddleware({
     sourcemap: false,
     outputstyle: 'compressed',
     prefix: '/styles/css',
-    debug: false
 }));
 app.use(express.static(path.join(__dirname, 'public')));
-
-app.use((req, res, next) => {
-    res.header('access-control-allow-origin', '*');
-    res.header('access-control-allow-methods', 'get, put, post, delete');
-    res.header('access-control-allow-headers', 'content-type');
+app.use((request, response, next) => {
+    response.header('Access-Control-Allow-Origin', ['*']);
+    response.header('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE');
+    response.header('Access-Control-Allow-Headers', 'Content-Type');
     next();
 });
 

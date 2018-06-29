@@ -5,10 +5,149 @@
         <meta name="description" content="Mais que um simples tradutor, uma plataforma de comunicação para surdos.">
 	    <meta name="keyword" content="Giulia, Aplicação pra surdos, Tradutor de libras, Projeto Giulia, Manuel Cardoso, Map Innovation, Map, Innovation, projetogiulia, Surdo, Libras, Alerta, Comunicação dos surdos, Acessibilidade, Aplicativo Giulia, Mãos que falam, Tecnologia assistiva, Escola, Sinais, Linguagem">
         <title><%= title %></title>
-        <link rel='stylesheet' href='/styles/css/style.css' />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel='stylesheet' href='/styles/css/materialize.css' media="screen,projection" />
+        <link rel='stylesheet' href='/styles/css/style.css' media="screen,projection" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="icon" type="image/x-icon" href="/images/giulia.png"/>
+        <script src="/lib/jquery.min.js"></script>
+        <script src="/lib/materialize.min.js"></script>
     </head>
     <body>
-        <h1><%= title %></h1>
-        <p>Welcome to <%= title %></p>
+        <header>
+            <%- include ./components/navbar.ejs %>
+        </header>
+
+        <main>
+            <div class="col l6 hide-on-med-and-down video-arm left-align">
+                <img class="arm responsive-img" src="/images/cel_arm.png">
+                <div class="video-arm-arm">
+                    <video class="video-intro" autoplay="autoplay" autobuffer preload="auto" muted>
+                        <source src="/video/avatar.mp4">
+                        <param name='autoStart' value='0'>
+                    </video>
+                </div>
+            </div>
+            <div class="col l6 m12">
+                <div class="banner" id="intro">
+                    <img class="responsive-img center-align" src="/images/aplicativogiulia.png">
+                    <h5 class="center-align">
+                        Mais que um simples tradutor, uma plataforma de<br/>
+                        comunicação para surdos.
+                    </h5>
+                    <p class="center-align hide-on-small-only"><a class="waves-effect waves-light btn-large corGiulia hoverable" href="#video-institucional">Assista ao vídeo institucional</a></p>
+                    <p class="center-align hide-on-med-and-up"><a class="waves-effect waves-light btn-large corGiulia hoverable" href="#video-institucional">Assista ao vídeo</a></p>
+
+                    <!-- MODAL -->
+                    <div id="video-institucional" class="modal">
+                        <div class="modal-content">
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/1cJbwn2ADN0" frameborder="0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- MODAL -->
+                </div>
+            </div>
+
+            <section class="causa">
+                <div class="container">
+                    <div class="row">
+                        <h2 class="center-align">Dados sobre os deficientes auditivos</h2>
+                    </div>
+                    <div class="row">
+                        <div class="col s12 m4">
+                            <h3 class="center-align">300</h3>
+                            <h4 class="center-align">Milhões</h4>
+                            <p class="center-align">Quantidade de deficientes<br/>auditivos no mundo.</p>
+                        </div>
+                        <div class="col s12 m4">
+                            <h3 class="center-align">9.7</h3>
+                            <h4 class="center-align">Milhões</h4>
+                            <p class="center-align">Quantidade de deficientes<br/> auditivos somente no Brasil.<br/>(CENSO IBGE 2010)</p>
+                        </div>
+                        <div class="col s12 m4">
+                            <h3 class="center-align">70</h3>
+                            <h4 class="center-align">Porcento</h4>
+                            <p class="center-align">Dos deficientes auditivos possuem<br/> dificuldade em ler e escrever.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="contato">
+            <div class="container">
+                <div class="row">
+                    <h2 class="center-align">Entre em contato com a nossa equipe</h2>
+                </div>
+                <div class="row">
+                    <div class="col l6 s12">
+                        <div class="row">
+                            <form class="col s12">
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input id="name" type="text" class="validate" required="" aria-required="">
+                                        <label for="name">Nome</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input id="email" type="email" class="validate" required="" aria-required="">
+                                        <label for="email" data-error="Digite um e-mail válido, por favor!">Email</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input id="subject" type="text" class="validate" required="" aria-required="">
+                                        <label for="subject">Assunto</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <textarea id="mensagem" class="materialize-textarea" required="" aria-required=""></textarea>
+                                        <label for="mensagem">Mensagem</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <button class="btn-large waves-effect waves-light corGiulia" id="btn-send">
+                                        Enviar
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="row center-align hide" id="contato-mensagem">
+                            <i class="large material-icons">done</i>
+                            <p>E-mail enviado com sucesso!</p>
+                        </div>
+                    </div>
+                    <div class="col l4 offset-l2 s12">
+                        <h5 class="white-text">Endereço</h5>
+                        <ul>
+                            <li class="grey-text text-lighten-3">Rua Pedrarias de Avilar, 129, Japiim I</li>
+                            <li class="grey-text text-lighten-3">69077-450</li>
+                            <li class="grey-text text-lighten-3">Manaus, Amazonas, Brasil</li>
+                        </ul>
+                        <h5 class="white-text">Telefone</h5>
+                        <ul>
+                            <li><a class="grey-text text-lighten-3" href="tel:+559236131474">+55 (92) 3613-1474</a></li>
+                        </ul>
+                        <h5 class="white-text">E-mail</h5>
+                        <ul>
+                            <li><a class="grey-text text-lighten-3" href="mailto:contato@projetogiulia.com.br">contato@projetogiulia.com.br</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="container center-align">
+                    2017 © All Rights Reserved.
+                    <h6>Um produto</h6>
+                    <img class="responsive-img wow fadeIn" src="assets/img/map_innovation.png" alt="Logo MapInnovation">
+                </div>
+            </div>
+            <%- include ./components/midias-sociais.ejs %>
+            <%- include ./components/fale-conosco.ejs %>
+        </footer>
     </body>
 </html>
