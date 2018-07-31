@@ -1,8 +1,10 @@
-const express = require('express');
-const router = express.Router();
+const home = require('./home'),
+    adm = require('./adm'),
+    login = require('./login');
 
-router.get('/', (request, response, next) => {
-  response.render('index', { title: 'Projeto Giulia | Mãos que falam' });
-});
-
-module.exports = router;
+module.exports = (app) => {
+    app
+    .use('/', home)
+    .use('/adm', adm)
+    .use('/login', login);
+};

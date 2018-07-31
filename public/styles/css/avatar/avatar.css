@@ -1,0 +1,56 @@
+@media screen and (min-width: 992px) {
+  .avatar {
+    position: fixed;
+    top: 20%;
+    z-index: 99999; }
+    .avatar #avatar-body {
+      float: left;
+      clear: both; }
+    .avatar #div-button {
+      float: right;
+      margin-left: -1px; }
+    .avatar .avatarShow {
+      display: block; }
+    .avatar .avatarUnshow {
+      display: none; }
+    .avatar .avatarRight {
+      position: fixed;
+      top: 20%;
+      right: 0;
+      z-index: 5; }
+    .avatar .bodyInRight {
+      float: right !important; }
+    .avatar .buttomInRight {
+      float: left; }
+    .avatar #avatar-button {
+      border: none;
+      height: 40px; }
+      .avatar #avatar-button:hover {
+        cursor: pointer; }
+      .avatar #avatar-button:active {
+        outline: none;
+        border: none; }
+      .avatar #avatar-button:focus {
+        outline: none;
+        background-color: #e1e1e1; } }
+
+@media screen and (max-width: 991px) {
+  .avatar {
+    display: none; } }
+
+.favicon-giulia {
+  width: 35px;
+  vertical-align: middle; }
+
+#mini-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  height: 40px; }
+
+.giulia-link {
+  text-decoration: none;
+  color: #aeaeae;
+  font-size: 14px;
+  font-weight: 3000; }

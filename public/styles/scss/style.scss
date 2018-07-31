@@ -1,9 +1,19 @@
 @import url('https://fonts.googleapis.com/css?family=Just+Another+Hand');
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400');
 
+@import 'materialize';
+
 @font-face {
     font-family: 'helveticaneue';
     src: url('/fonts/HelveticaNeue-UltraLight.otf');
+}
+
+.btn-large {
+    font-weight: bold;
+    background-color: #FF7EAB;
+    &:hover {
+        background-color: #00B0FF;
+    }
 }
 
 .sidenav-overlay {
@@ -19,8 +29,6 @@
     margin-top: 0px;
     padding-top: 60px;
     text-align: center;
-    background-attachment: scroll;
-    background-position: center center;
     min-height: 720px;
     height: auto;
     width: 100%;
@@ -28,6 +36,15 @@
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    h5 {
+        font-size: 20px;
+        font-weight: 400;
+        margin: 40px 0px;
+    }
 }
 
 .video-arm {
@@ -61,25 +78,65 @@
 }
 
 section {
-    h2 {
-        font-family: 'Just Another Hand', 'cursive';
-        color: #0E4774;
-        font-size: 100px;
+    padding-bottom: 50px;
+    padding-top: 50px;
+}
+
+.funcoes {
+    .title-function {
+        margin-bottom: 100px;
+    }
+    background-color: #FAFAFA;
+    .col {
+        height: 203px;
+    }
+    .section-title {
+        line-height: 100px;
+    }
+    @media #{$small-and-down}{
+        .section-title {
+            line-height: 80px;
+            font-size: 80px;
+        }
     }
 }
 
+.section-title {
+        font-family: 'Just Another Hand', 'cursive';
+        color: #0E4774;
+        font-size: 100px;
+}
+
 footer {
-    h2 {
+    .section-title {
         font-family: 'Just Another Hand', 'cursive';
         color: white;
         font-size: 100px;
+        margin-top: 50px;
+    }
+    .input-field {
+        input, textarea {
+            color: #00B0FF;
+            &:focus+label {
+                color: #FFF !important;
+            }
+        }
+        input,textarea {
+            &:focus, &.valid {
+                border-bottom: 1px solid #00B0FF !important;
+                box-shadow: 0 1px 0 0 #00B0FF !important;
+            }
+        }
+    }
+    .footer-copyright {
+        color: rgba(255, 255, 255, 0.8);
     }
 }
 
 //navbar
 nav {
     a {
-        color: #00b0ff;
+        color: #00B0FF;
     }
     ul {
         li {
@@ -92,7 +149,7 @@ nav {
         a:hover {
             font-weight: bold;
             color: white;
-            background-color: #ff80ab;
+            background-color: #FF80AB;
         }
     }
 }
@@ -127,6 +184,9 @@ nav {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    .character-counter {
+        color: #00B0FF;
+    }
 }
 
 .midias-sociais {
@@ -151,43 +211,36 @@ nav {
     }
 }
 
-//fb button
-a.fb-message-blue {
-    font-size: 14px;
-    font-family: 'Roboto', sans-serif !important;
-    text-decoration: none;
-    color: #fff;
-    background-color: #0084ff;
-    border: 1px solid #0084ff;
-    width: 140px;
-    height: 35px;
-    line-height: 35px;
-    position: fixed;
-    border-radius: 3px;
-    outline: none;
-    -webkit-transition: all ease .15s;
-    -o-transition: all ease .15s;
-    -moz-transition: all ease .15s;
-    transition: all ease .15s;
-    margin: 0 auto;
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.10), 0 10px 10px rgba(0, 0, 0, 0.22);
-    bottom: 16px;
-    right: 16px;
+.noticias {
+    .section-title {
+        font-family: 'Lato', 'sans-serif';
+        text-transform: uppercase;
+        font-size: 3.56rem;
+        color: #FFF;
+    }
 }
 
-a.fb-message-blue:hover {
-    background-color: #2093ff;
-    border: 1px solid #2093ff;
-    transform: scale(1.10);
-}
-
-.fb-message-blue i {
-    background-image: url('https://i.imgur.com/hjwozo7.png');
-    background-repeat: no-repeat;
-    background-size: 17px;
-    background-position: 10px 9px;
-    top: -1px;
-    height: 18px;
-    width: 100%;
-    padding: 10px 18px;
+.noticias-home {
+    a {
+        color: #FF7EAB !important;
+        &:hover {
+            color: #00B0FF !important;
+        }
+    }
+    .date {
+        color: #C1C1C1 !important;
+    }
+    .content-clamp {
+        color: #717171 !important;
+    }
+    .title-clamp {
+        font-weight: bold;
+    }
+    .btn-read-more {
+        margin-top: 25px;
+        color: white !important;
+        &:hover {
+            color: white !important;
+        }
+    }
 }

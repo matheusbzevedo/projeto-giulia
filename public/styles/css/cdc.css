@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:400,900");
+body {
+  font-family: 'Lato', sans-serif;
+  font-weight: 900; }
+
+.principal {
+  border: 4px solid;
+  border-color: #eee;
+  box-shadow: 0px 10px 10px rgba(111, 111, 111, 0.2); }
+
+.principal h2 {
+  color: #aeaeae;
+  font-size: 18px; }
+
+.principal h1 {
+  color: #4a4a4a;
+  font-size: 36px; }
+
+.active i {
+  color: #00B0FF; }
+
+iframe {
+  height: auto;
+  min-height: 480px; }
+
+.lista li {
+  list-style-type: disc !important;
+  margin-bottom: 10px; }
+
+.lista-numero li {
+  list-style-type: decimal !important;
+  margin-bottom: 10px; }
+
+.lista-roman li {
+  list-style-type: upper-roman !important;
+  margin-bottom: 10px; }
+
+.lista-latin li {
+  list-style-type: lower-latin !important;
+  margin-bottom: 10px; }
+
+.titulo-lista {
+  list-style-type: none; }
+
+.avatar {
+  position: fixed; }
+
+.favicon-giulia {
+  width: 35px;
+  vertical-align: middle; }
+
+#mini-bar {
+  text-align: center; }
+
+.giulia-link {
+  text-decoration: none;
+  color: #aeaeae;
+  font-size: 14px;
+  font-weight: 300; }
